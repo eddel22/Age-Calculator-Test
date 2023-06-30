@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    *{
+      font-family: 'Poppins', sans-serif;
+      
+    }
+
+    body {
+      background-color: #F0F0F0;
+    }
+
+    @media (min-width:320px) {
+      .container {
+        background-color: #FFFF;
+        width:320px;
+        height:500px;
+        margin: 0;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 25px 25px 125px 25px;
+        padding:20px;
+      }
+      
+      .inputContainer {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top:30px;
+      }
+
+      .inputContainer li{
+        text-decoration: none;
+        list-style: none;
+      }
+      
+      .inputContainer li input{
+        width:60px;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #C2C2C2;
+        font-weight: 800;
+        font-size: 1.2rem;
+      }
+      .inputContainer li input:active{
+        background-color: #FFFF;
+
+      }
+      .inputContainer li input:focus{
+        outline: 1px solid #864DFF;
+      }
+
+      .inputContainer h1 {
+        font-size: 0.8rem;
+        color:#737373;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-align: left;
+      }
+      .inputContainer h2{
+        font-size: 0.53rem;
+        color: #FF6261;
+        font-weight: 300;
+        font-style:italic;
+        text-align: center;
+        opacity: 0;
+      }
+
+      .submitBtnCont{
+        background-color: #864DFF;
+        padding: 20px 20px 16px;
+        border-radius: 100%;
+        margin: 0;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        border: none;
+        cursor: pointer;
+      }
+      .submitBtnCont:hover{
+        background-color:#151515;
+        outline:none;
+      }
+      .submitBtnCont:focus{
+        outline:none;
+      }
+      
+      hr{
+        margin-top:40px;
+      }
+      .resultContainer{
+        margin-top: 60px;
+        font-weight: 800;
+        font-size: 3rem;
+        font-style: italic;
+      }
+      
+      .resultContainer li{
+        list-style-type: none;
+      }
+
+      .resultContainer c{
+        color: #864DFF;
+      }
+    }
+
+    @media (min-width:1281px){
+      .container {
+          background-color: #FFFF;
+          width:500px;
+          height:300px;
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 20px 20px 125px 20px;
+          padding: 20px 30px;
+        }
+        
+        .inputContainer {
+          display: flex;
+          gap: 20px;
+          justify-content: left;
+          margin-top:10px;
+        }
+
+        .inputContainer li{
+          text-decoration: none;
+          list-style: none;
+        }
+        
+        .inputContainer li input{
+          width:60px;
+          padding: 5px 15px;
+          border-radius: 5px;
+          border: 1px solid #C2C2C2;
+          font-weight: 800;
+          font-size: 1.2rem;
+        }
+        .inputContainer li input:active{
+          background-color: #FFFF;
+
+        }
+        .inputContainer li input:focus{
+          outline: 1px solid #864DFF;
+        }
+
+        .inputContainer h1 {
+          font-size: 0.5rem;
+          color:#737373;
+          font-weight: 700;
+          letter-spacing: 3px;
+          text-align: left;
+        }
+        .inputContainer h2{
+          font-size: 0.4rem;
+          color: #FF6261;
+          font-weight: 400;
+          font-style:italic;
+          text-align: left;
+          opacity: 0;
+        }
+
+        .submitBtnCont{
+          background-color: #864DFF;
+          padding: 20px 20px 16px;
+          border-radius: 100%;
+          margin: 0;
+          position: absolute;
+          top: 38%;
+          left: 85%;
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          border: none;
+          cursor: pointer;
+        }
+        .submitBtnCont:hover{
+          background-color:#151515;
+          outline:none;
+        }
+        .submitBtnCont:focus{
+          outline:none;
+        }
+        
+        hr{
+          margin-top:15px;
+          width: 450px;
+          text-align:left;
+          margin-left:0;
+        }
+        .resultContainer{
+          margin-top: 20px;
+          font-weight: 800;
+          font-size: 3rem;
+          font-style: italic;
+          line-height: 110%;
+        }
+        
+        .resultContainer li{
+          list-style-type: none;
+        }
+
+        .resultContainer c{
+          color: #864DFF;
+        }
+        c{
+          letter-spacing: 8px;
+        }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="inputContainer">
+      <li class="">
+        <h1>DAY</h1>
+        <input id="dayI" type="number" maxlength="2" placeholder="DD">
+        <h2 id="errorDay">Must be a valid day</h2>
+      </li>
+      <li class="">
+        <h1>MONTH</h1>
+        <input id="monthI" type="number" maxlength="2" placeholder="MM">
+        <h2 id="errorMonth">Must be a valid Month</h2>
+      </li>
+      <li class="">
+        <h1>YEAR</h1>
+        <input id="yearI" type="number" maxlength="4" placeholder="YYYY">
+        <h2 id="errorYear">Must be a valid Year</h2>
+      </li>
+    </div>
+    <div class="btnContainer">
+      <hr color="#C2C2C2" size="1">
+      <button class="submitBtnCont" onclick="change()">
+        <img src="icon-arrow.svg" alt="" width="26" height="24">
+      </button>
+    </div>
+    <div class="resultContainer">
+      <li><c id="yearD">--</c> years</li>
+      <li><c id="monthD">--</c> months</li>
+      <li><c id="dayD">--</c> days</li>
+    </div>
+  </div>
+  <script>
+    function change(){
+      var year1 = document.getElementById("yearI").value;
+      var month1 = document.getElementById("monthI").value;
+      var day1 = document.getElementById("dayI").value;
+      var yearD = document.getElementById("yearD");
+      var monthD = document.getElementById("monthD");
+      var dayD = document.getElementById("dayD");
+      var td = 30,
+          tm = 6,
+          ty = 2023;
+
+      if (day1 == null || day1 == ""){
+        document.getElementById("errorDay").style.opacity="100%";
+        return false;
+      }
+      if (month1 == null || month1 == ""){
+        document.getElementById("errorMonth").style.opacity="100%";
+        return false;
+      }
+      if (year1 == null || year1 == ""){
+        document.getElementById("errorYear").style.opacity="100%";
+        return false;
+      }
+
+      if (td<day1) {
+        dayD.innerHTML = (td-day1+30);
+        month1 = month1-1;
+      } else {
+        dayD.innerHTML = td - day1;
+      }
+
+      if (tm<month1){
+        monthD.innerHTML = (tm-month1+12);
+        ty = ty-1;
+      } else{
+        monthD.innerHTML= tm - month1;
+      };
+
+      yearD.innerHTML= ty - year1;
+
+    }
+
+  </script>
+</body>
+</html>
